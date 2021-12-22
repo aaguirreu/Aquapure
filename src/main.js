@@ -26,47 +26,47 @@ async function tableQuery() {
     let { data: venta_id } = await supabase
     .from('venta')
     .select('venta_id')
-  console.log( Object.values(venta_id[0])[0] );
+    //console.log( Object.values(venta_id[0])[0] );
   
   let { data: comprador_id } = await supabase
     .from('comprador')
     .select('comprador_id')
-  console.log( Object.values(comprador_id[0])[0] );
+    //console.log( Object.values(comprador_id[0])[0] );
 
   let { data: comprador_name } = await supabase
     .from('comprador')
     .select('comprador_name')
-  console.log( Object.values(comprador_name[0])[0] );
+    //console.log( Object.values(comprador_name[0])[0] );
     
   let { data: unidades } = await supabase
     .from('venta')
     .select('unidades')
-  console.log( Object.values(unidades[0])[0] );
+    //console.log( Object.values(unidades[0])[0] );
 
   let { data: recarga } = await supabase
     .from('venta')
     .select('recarga')
-  console.log( Object.values(recarga[0])[0] );
+   //console.log( Object.values(recarga[0])[0] );
 
   let { data: ubicacion } = await supabase
   .from('venta')
   .select('ubicacion')
-console.log( Object.values(ubicacion[0])[0] );
+  //console.log( Object.values(ubicacion[0])[0] );
 
   let { data: contacto } = await supabase
   .from('comprador')
   .select('contacto')
-console.log( Object.values(contacto[0])[0] );
+  //console.log( Object.values(contacto[0])[0] );
 
   let { data: pagado } = await supabase
   .from('venta')
   .select('pedido_pagado')
-console.log( Object.values(pagado[0])[0] );
+  //console.log( Object.values(pagado[0])[0] );
 
   let { data: monto } = await supabase
   .from('venta')
   .select('monto')
-console.log( Object.values(monto[0])[0] );
+  //console.log( Object.values(monto[0])[0] );
 
   for (let index = 0; index < total_ventas.length; index++) {
     let tr = document.createElement('tr');
@@ -112,7 +112,41 @@ console.log( Object.values(monto[0])[0] );
     td9.innerHTML = Object.values(pagado[index])[0] 
     
     document.querySelector('tbody').appendChild(tr);  
+  }
 }
 
+const btnOrdenar = document.getElementById('ordenar')
+const btnStock = document.getElementById('stock')
 
+btnOrdenar.addEventListener("click", () => {
+  insertData()
+})
+
+async function insertData() {
+  let { data: venta_id } = await supabase.from('venta').select('venta_id')
+  console.log(venta_id)
+  let { data: comprador_id } = await supabase.from('comprador').select('comprador_id')
+  //comprador_id++
+  const name = document.getElementById('name').value
+  console.log(name)
+  const tel = document.getElementById('tel').value
+  console.log(tel)
+  const recarga = document.getElementById('si').value
+  console.log(recarga)
+  const cant = document.getElementById('number').value
+  console.log(cant)
+  const dir = document.getElementById('dir').value
+  console.log(dir)
+  
+  const { data, error } = await supabase.from('venta').insert([{
+    venta_id: venta_id.length++,
+    comprador_id: comprador_id.length++,
+    comprador_name: name,
+    unidades: cant,
+    monto: 0,
+    recarga: recarga,
+    contacto: tel,
+    ubicacion: dir,
+    pagado: true,
+  }])
 }
