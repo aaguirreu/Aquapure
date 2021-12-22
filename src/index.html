@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aquapure - Board</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script defer type="module" src="./main.js"></script>
+  </head>
+  <body class="has-navbar-fixed-top">
+
+    <!-- navbar -->
+    <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <h1 class="has-text-weight-bold is-5 has-text-primary mx-4 center-fix">AQUAPURE</h1>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">Home</a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Ayuda</a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">Reiniciar</a>
+              <a class="navbar-item">Licencia</a>
+              <a class="navbar-item">Acerca</a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="navbar-item">nombre@ejemplo.com</a>
+              <a class="button is-light" href="./login.html">Cerrar sesión</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="tile is-ancestor mt-5">
+
+      <!-- table -->
+      <div class="tile is-vertical box fit">
+        <table class="table">
+          <thead>
+            <tr>
+              <th><abbr title="venta_id">id</abbr></th>
+              <th><abbr title="comprador_id">cli_id</abbr></th>
+              <th><abbr title="comprador_name">name</abbr></th>
+              <th><abbr title="unidades">unidades</abbr></th>
+              <th><abbr title="monto">monto</abbr></th>
+              <th><abbr title="recarga">recarga</abbr></th>
+              <th><abbr title="contacto">contacto</abbr></th>
+              <th><abbr title="envio_fecha">envio_fecha</abbr></th>
+              <th><abbr title="ubicacion">ubicacion</abbr></th>
+              <th><abbr title="pedido_pagado">pagado</abbr></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th><abbr title="venta_id">id</abbr></th>
+              <th><abbr title="comprador_id">cli_id</abbr></th>
+              <th><abbr title="comprador_name">name</abbr></th>
+              <th><abbr title="unidades">unidades</abbr></th>
+              <th><abbr title="monto">monto</abbr></th>
+              <th><abbr title="recarga">recarga</abbr></th>
+              <th><abbr title="contacto">contacto</abbr></th>
+              <th><abbr title="envio_fecha">envio_fecha</abbr></th>
+              <th><abbr title="ubicacion">ubicacion</abbr></th>
+              <th><abbr title="pedido_pagado">pagado</abbr></th>
+            </tr>
+          </tfoot>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- sidebar -->
+      <div class="tile is-ancestor ml-4 mt-0 is-4 is-vertical">
+
+        <div class="tile is-vertical box">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Cliente</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control is-expanded has-icons-left">
+                  <input class="input" type="text" placeholder="Nombre">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control is-expanded has-icons-left has-icons-right">
+                  <input class="input is-success" type="email" placeholder="nombre@ejemplo.com">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="field is-horizontal">
+            <div class="field-label"></div>
+            <div class="field-body">
+              <div class="field is-expanded">
+                <div class="field has-addons">
+                  <p class="control">
+                    <a class="button is-static">+56</a>
+                  </p>
+                  <p class="control is-expanded">
+                    <input class="input" type="tel" placeholder="numero de contacto">
+                  </p>
+                </div>
+                <p class="help">Anteponer un 9 si su numero es celular o un 2 si es telefono fijo</p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Persona</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select>
+                      <option>Natural</option>
+                      <option>Juridica</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- <div class="field is-narrow">
+                <label class="checkbox has-text-weight-bold"> Recarga </label>
+                  <input class="ml-2" type="checkbox">
+              </div>
+  
+              <div class="field is-narrow">
+                <div class="field-body is-flex-wrap-nowrap">
+                  <div class="control">
+                    <label class="checkbox has-text-weight-bold"> Cantidad </label>
+                      <input class="input ml-2" type="number" min="0">
+                  </div>
+                </div> 
+              </div> -->
+  
+            </div>
+          </div>
+          
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Recarga?</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="member"> Sí</label>
+                  <label class="radio">
+                    <input type="radio" name="member"> No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Cantidad</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <input class="input" type="number" min="0" value="0">
+              </div>
+            </div>
+          </div>
+          
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Dirección</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input is-danger" type="text" placeholder="e.g. Los alerces 123">
+                </div>
+                <p class="help is-danger">Este campo es obligatorio</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <!-- Left empty for spacing -->
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <a class="button is-primary">Ordenar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tile is-vertical box">
+          
+          <div class="tile is-vertical">
+            <a class="subtitle has-text-weight-bold">Actualizar stock manualmente</a>
+            <div class="field is-horizontal has-addons">
+              <div class="mx-2 is-normal">
+                <label class="label">Stock bidones llenos</label>
+              </div>
+              <div class="field-body">
+                <div class="control">
+                  <input class="input" id="lleno" type="number" min="0">
+                </div>
+              </div>
+            </div>
+            
+            <div class="field is-horizontal">
+              <div class="mx-2 is-normal">
+                <label class="label">Stock bidones vacios</label>
+              </div>
+              <div class="field-body">
+                <div class="control">
+                  <input class="input" id="vacio" type="number" min="0">
+                </div>
+              </div>
+            </div>
+    
+            
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <!-- Left empty for spacing -->
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <a class="button is-primary">Ordenar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+  
+        </div>
+        
+        <nav class="level box">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Bidones llenos</p>
+              <p class="title" id="llenos">...</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Bidones vacios</p>
+              <p class="title" id="vacios">...</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Ventas totales</p>
+              <p class="title" id="totales">...</p>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+
+    </div>
+  </body>
+</html>
